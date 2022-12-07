@@ -1,15 +1,14 @@
-package com.example.rssfeed.ui
+package com.example.rssfeed.ui.newsdetails
 
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
-import com.example.rssfeed.ui.newsdetails.NewsDetailsContent
-import com.example.rssfeed.ui.newsdetails.NewsDetailsTopBar
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.rssfeed.ui.newslist.NewsListScreenViewModel
 
 @Composable
 fun NewsDetailsScreen(
     index: Int?,
-    viewModel: NewsListScreenViewModel = NewsListScreenViewModel(),
+    viewModel: NewsListScreenViewModel = hiltViewModel(),
     onBack: () -> Unit
 ) {
     if (viewModel.getTopHeadlines().articles.isNotEmpty()) {

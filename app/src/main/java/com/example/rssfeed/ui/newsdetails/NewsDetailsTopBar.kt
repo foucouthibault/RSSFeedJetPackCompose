@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.Color
 
 @Composable
 fun NewsDetailsTopBar(onBack: () -> Unit) {
-    TopAppBar(backgroundColor = Color.Cyan) {
+    TopAppBar(backgroundColor = Color.Black) {
         IconButton(onClick = { onBack() }) {
             Icon(Icons.Default.ArrowBack, contentDescription = null, tint = Color.White)
         }

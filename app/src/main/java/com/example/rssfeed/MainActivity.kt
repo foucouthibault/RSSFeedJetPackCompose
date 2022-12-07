@@ -1,5 +1,6 @@
 package com.example.rssfeed
 
+import android.app.Application
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -13,10 +14,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.rssfeed.ui.NewsDetailsScreen
+import com.example.rssfeed.ui.newsdetails.NewsDetailsScreen
 import com.example.rssfeed.ui.newslist.NewsListScreen
 import com.example.rssfeed.ui.theme.RSSFeedTheme
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.HiltAndroidApp
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +38,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@HiltAndroidApp
+class CoreApplication: Application()
+
 @Composable
 fun RssNavigator() {
     val navController = rememberNavController()
@@ -45,7 +52,7 @@ fun RssNavigator() {
         }
         composable("news_details/{index}", arguments = listOf(navArgument("index") {type = NavType.IntType})) { backStackEntry ->
             NewsDetailsScreen(backStackEntry.arguments?.getInt("index")) {
-                //navController.popBackStack()
+                navController.popBackStack()
             }
         }
     }

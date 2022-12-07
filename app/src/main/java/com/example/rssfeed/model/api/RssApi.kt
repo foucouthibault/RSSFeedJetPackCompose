@@ -4,8 +4,9 @@ import com.example.rssfeed.model.topHeadlines.TopHeadlines
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import javax.inject.Inject
 
-class RssWebService {
+class RssWebService @Inject constructor(){
     private var api: RssApi
 
     init {

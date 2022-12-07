@@ -5,10 +5,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.rssfeed.model.repository.NewsListScreenRepository
 import com.example.rssfeed.model.topHeadlines.TopHeadlines
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class NewsListScreenViewModel(private val newsListScreenRepository : NewsListScreenRepository = NewsListScreenRepository()): ViewModel() {
+@HiltViewModel
+class NewsListScreenViewModel @Inject constructor(private val newsListScreenRepository : NewsListScreenRepository): ViewModel() {
     private val topHeadlines = mutableStateOf(TopHeadlines(articles = emptyList()))
 
     init {
