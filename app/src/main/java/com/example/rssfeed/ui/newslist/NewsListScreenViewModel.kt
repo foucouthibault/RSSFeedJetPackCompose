@@ -11,12 +11,16 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class NewsListScreenViewModel @Inject constructor(private val newsListScreenRepository : NewsListScreenRepository): ViewModel() {
+class NewsListScreenViewModel @Inject constructor(private val newsListScreenRepository: NewsListScreenRepository) :
+    ViewModel() {
     private val topHeadlines = mutableStateOf(TopHeadlines(articles = emptyList()))
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            topHeadlines.value = getAllNews()
+            try {
+                topHeadlines.value = getAllNews()
+            } catch (_: Exception) {
+            }
         }
     }
 

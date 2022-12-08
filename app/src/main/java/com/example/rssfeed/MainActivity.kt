@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @HiltAndroidApp
-class CoreApplication: Application()
+class CoreApplication : Application()
 
 @Composable
 fun RssNavigator() {
@@ -50,7 +50,10 @@ fun RssNavigator() {
                 navController.navigate("news_details/$index")
             }
         }
-        composable("news_details/{index}", arguments = listOf(navArgument("index") {type = NavType.IntType})) { backStackEntry ->
+        composable(
+            "news_details/{index}",
+            arguments = listOf(navArgument("index") { type = NavType.IntType })
+        ) { backStackEntry ->
             NewsDetailsScreen(backStackEntry.arguments?.getInt("index")) {
                 navController.popBackStack()
             }

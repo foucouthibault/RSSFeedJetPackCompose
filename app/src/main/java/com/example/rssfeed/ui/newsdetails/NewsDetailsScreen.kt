@@ -15,8 +15,8 @@ fun NewsDetailsScreen(
         val article = index?.let { viewModel.getTopHeadlines().articles[it] }
         if (article != null) {
             Scaffold(
-                topBar = {NewsDetailsTopBar {onBack()}},
-                content = { NewsDetailsContent(article)})
+                topBar = { NewsDetailsTopBar { onBack() } },
+                content = { NewsDetailsContent(article) })
         }
     }
 }
