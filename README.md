@@ -1,10 +1,10 @@
 # RSSFeedJetPackCompose
 
-Au niveau des lib j'ai choisi
+au niveau des librairies je suis resté sur les recommandations de la doc officielle pour la navigation, pour hilt et coil
+concernant retrofit je l'ai utilisé car c'est celui que j'ai l'habitude d'utiliser.
 
-pour le choix des lib pour être francs j'ai pas spécialement de justifications, j'ai pris ce que je connais
-niveaux problèmes que j'ai detecté et que je n'ai pas pu traité:
-- Intégrer un bouton back une fois qu'on a cliqué sur une news. J'avais essayé quelque chose mais ça ne fonctionnait pas sans que je trouve la raison
-- Intégration de Hilt dont on m'a parlé dans des précédents tests mais que je n'ai pas eu le temps de prendre en main
-- Intégration des test unitaires où je suis un total novice
-- Gestion d'erreur pour les requêtes
+Concernant les problèmes identifiés:
+- Je ne suis pas satisfait de passer le même ViewModel à 2 vues différentes mais je n'ai pas su faire autrement
+- Intégrer des tests unitaires
+
+NB: J'ai volontairement push le local.properties pour montrer comment je stockais l'API key, je ne l'aurais pas fait dans un vrai projet.

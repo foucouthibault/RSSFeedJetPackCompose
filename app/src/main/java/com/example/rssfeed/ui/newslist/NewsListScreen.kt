@@ -20,10 +20,10 @@ fun NewsListScreen(
     viewModel: NewsListScreenViewModel = hiltViewModel(),
     onNewsClick: (index: Int) -> Unit,
 ) {
-    val article = viewModel.getTopHeadlines().articles
-    if (article.isNotEmpty()) {
+    val articles = viewModel.getTopHeadlines().articles
+    if (articles.isNotEmpty()) {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
-            itemsIndexed(article) { index, item ->
+            itemsIndexed(articles) { index, item ->
                 Row(
                     modifier = Modifier
                         .clickable {
