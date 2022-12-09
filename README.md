@@ -10,4 +10,4 @@ Concernant les problèmes identifiés:
 - Intégrer des tests unitaires
 - Mieux gérer les news ne contenant pas d'images
 
-NB: J'ai volontairement push le local.properties pour montrer comment je stockais l'API key, je ne l'aurais pas fait dans un vrai projet.
+NB: J'ai volontairement push le local.properties pour montrer comment je stockais l'API key, je ne l'aurais pas fait dans un vrai projet. J'ai pris le soin d'activer la minification du code dans le build.gradle de l'app.
