@@ -1,7 +1,7 @@
 # RSSFeedJetPackCompose
 
 au niveau des librairies je suis resté sur les recommandations de la doc officielle pour la navigation, pour hilt et coil
-concernant retrofit je l'ai utilisé car c'est bien énormement utilisé et documenté. C'est également préconisé dans la documentation officielle
+concernant retrofit je l'ai utilisé car c'est énormement utilisé et documenté. C'est également préconisé dans la documentation officielle
 
 Concernant les problèmes identifiés:
 - Je ne suis pas satisfait de passer le même ViewModel à 2 vues différentes mais je n'ai pas su faire autrement
