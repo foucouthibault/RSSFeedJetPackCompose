@@ -24,7 +24,7 @@ class RssWebService @Inject constructor() {
     }
 
     interface RssApi {
-        @GET("/v2/everything?sources=le-monde,lequipe,les-echos,liberation&apiKey=" + BuildConfig.API_KEY)
+        @GET("/v2/top-headlines?country=fr&apiKey=" + BuildConfig.API_KEY)
         suspend fun getAllNews(): TopHeadlines
     }
 }
